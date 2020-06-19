@@ -16,7 +16,7 @@ Auth::routes();
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/category/{id}', 'HomeController@get_category_content')->name('get_category_content');
+Route::get('/categorie/{id}', 'HomeController@get_category_content')->name('get_category_content');
 Route::get('/article/{id}', 'HomeController@get_article_content')->name('get_article_content');
 
 Route::get('/article/like/{id}', 'HomeController@send_like')->name('send_like');

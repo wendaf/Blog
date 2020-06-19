@@ -16,77 +16,60 @@
                 </div>
                 <div class="col-md-4">
                     <div class="logo" style="color:rgba(84,84,84,0.53);font-family: 'Concert One', cursive;font-size:75px;margin-top:1%;">
-                        Auto Blog
+                        <img style="width: 370px; height: 100px" src="https://upload.wikimedia.org/wikipedia/commons/c/ce/Automoto_La_cha%C3%AEne_2018_on_air.jpg" />
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="right_section">
                         @if (Auth::guest())
-                            <ul class="nav navbar-nav">
-                                <li><a href="/login">Login</a></li>
-                                <li><a href="/register">Register</a></li>
-                            </ul>
+                        <ul class="nav navbar-nav">
+                            <li><a href="/login">Login</a></li>
+                            <li><a href="/register">Register</a></li>
+                        </ul>
                         @else
-                            <ul class="nav navbar-nav">
-                                <li class="dropdown m-menu-fw">
-                                    <a href="javascript:void(0);" data-toggle="dropdown" class="dropdown-toggle">
-                                        {{Auth::user()->name}}
-                                        <span><i class="fa fa-angle-down"></i></span></a>
-                                    <ul class="dropdown-menu">
-                                        @if (Auth::user()->is_admin)
-                                            <li><a href="/home/admin">Panel admin</a></li>
-                                        @endif
-                                        <li>
-                                            <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('frm-logout').submit();">
-                                                Logout
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ul>
-                            <form id="frm-logout" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                {{ csrf_field() }}
-                            </form>
+                        <ul class="nav navbar-nav">
+                            <li class="dropdown m-menu-fw">
+                                <a href="javascript:void(0);" data-toggle="dropdown" class="dropdown-toggle">
+                                    {{Auth::user()->name}}
+                                    <span><i class="fa fa-angle-down"></i></span></a>
+                                <ul class="dropdown-menu">
+                                    @if (Auth::user()->is_admin)
+                                    <li><a href="/home/admin">Panel admin</a></li>
+                                    @endif
+                                    <li>
+                                        <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('frm-logout').submit();">
+                                            Logout
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <form id="frm-logout" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            {{ csrf_field() }}
+                        </form>
                         @endguest
                     </div>
                 </div>
             </div>
         </div>
-
         <div class="navigation-section">
             <nav class="navbar m-menu navbar-default">
-                <div class="container">
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                                data-target="#navbar-collapse-1"><span class="sr-only">Toggle navigation</span> <span
-                                    class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
-                        </button>
-                    </div>
-                    <div class="collapse navbar-collapse" id="#navbar-collapse-1">
-                        <ul class="nav navbar-nav main-nav">
-                            <li class="active"><a href="/">Accueil</a></li>
-                            @php $count = 0; @endphp
-                            @foreach($fifthCategory as $key => $data)
-                                <li class="active"><a href="/category/{{$data->id}}">{{$data->name}}</a></li>
-                            @endforeach
+                <div style='display: flex; flex-direction: row; align-items: center; justify-content: center;'>
 
-                            <li class="dropdown m-menu-fw"><a href="javascript:void(0);" data-toggle="dropdown" class="dropdown-toggle">
-                                    Category
-                                    <span><i class="fa fa-angle-down"></i></span></a>
-                                <ul class="dropdown-menu">
-                                    <li>
-                                        <div class="m-menu-content">
-                                            <ul class="col-md-auto">
-                                                @foreach($category as $key => $data)
-                                                    <li class="active"><a href="/category/{{$data->id}}">{{$data->name}}</a></li>
-                                                @endforeach
-                                            </ul>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
+                    <li class="active" style='list-style-type: none; margin-right: 25px; margin-top: 5px'><a href="/">Accueil</a></li>
+
+                    @php $count = 0; @endphp
+                    @foreach($fifthCategory as $key => $data)
+
+                    <li class="active" style="list-style-type: none;  margin-right: 25px; margin-top: 5px"><a href="/categorie/{{$data->id}}">{{$data->name}}</a></li>
+
+                    @endforeach
+
+                    <form class="form-inline my-2 my-lg-0">
+                        <input class="form-control mr-sm-2" type="search" style='margin-top: 2px; margin-left: 25px' placeholder="Quelques mots clés..." aria-label="Recherhcer">
+                        <button class="btn btn-outline-success my-2 my-sm-0" style='margin-top: 2px;' type="submit">Recherche</button>
+                    </form>
+                    </ul>
                 </div>
             </nav>
         </div>
