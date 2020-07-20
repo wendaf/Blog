@@ -20,7 +20,7 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="top_article_img">
-                                    <a href="/categorie/{{$fifthArticle[0]['id']}}" target="_self"><img class="img-responsive" src="{{$fifthArticle[0]['media']}}" style="width:100%;height:155px !important;" alt="{{$fifthArticle[0]['title']}}"></a>
+                                    <a href="/article/{{$fifthArticle[0]['id']}}" target="_self"><img class="img-responsive" src="{{$fifthArticle[0]['media']}}" style="width:100%;height:155px !important;" alt="{{$fifthArticle[0]['title']}}"></a>
                                 </div>
                             </div>
                         </div>

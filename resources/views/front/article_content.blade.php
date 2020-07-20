@@ -19,7 +19,15 @@
                                     <div class="widget_article_social">
                                         <span><a href="javascript:void(0);" target="_self"> <i class="fa fa-heart" data-id="{{$myArticle['id']}}" style="background:transparent;color:red;margin-right:5px;font-weight:900">&nbsp;{{$myArticle['like'] ?? 0}}</i></a></span>
                                     </div>
-                                </div>
+                                    <!-- AddToAny BEGIN -->
+                                    <div class="a2a_kit a2a_kit_size_32 a2a_default_style">
+                                    <a class="a2a_dd" href="https://www.addtoany.com/share"></a>
+                                    <a class="a2a_button_facebook"></a>
+                                    <a class="a2a_button_twitter"></a>
+                                    <a class="a2a_button_email"></a>
+                                    </div>
+                                    <script async src="https://static.addtoany.com/menu/page.js"></script>
+                                    <!-- AddToAny END -->                                </div>
                             </div>
                     </div>
                 </div>

@@ -65,8 +65,9 @@
 
                     @endforeach
 
-                    <form class="form-inline my-2 my-lg-0">
-                        <input class="form-control mr-sm-2" type="search" style='margin-top: 2px; margin-left: 25px' placeholder="Quelques mots clés..." aria-label="Recherhcer">
+                    <form action="/search" method="POST" role="search" class="form-inline my-2 my-lg-0">
+                    {{ csrf_field() }}
+                        <input class="form-control mr-sm-2" type="search" name="q" style='margin-top: 2px; margin-left: 25px' placeholder="Quelques mots clés..." aria-label="Recherhcer">
                         <button class="btn btn-outline-success my-2 my-sm-0" style='margin-top: 2px;' type="submit">Recherche</button>
                     </form>
                     </ul>

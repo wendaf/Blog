@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Article;
 use App\Categorie;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Input;
 
 class HomeController extends Controller
 {
@@ -57,5 +58,22 @@ class HomeController extends Controller
         $article->like += 1;
         $article->save();
         return response()->json(["success", $article->like]);
+    }
+
+    public function search()
+    {
+        $article = Article::all();
+        $fifthArticle = Article::orderBy('created_at', 'desc')->paginate(5);
+        $popularArticle = Article::orderBy('like', 'desc')->paginate(4);
+        $fifthCategory = Categorie::orderBy('created_at', 'asc')->paginate(4);
+        $lastArticle = Article::all()->first();
+        $category = Categorie::all();
+        $q = Input::get('q');
+        $results = Article::where('title', 'LIKE', '%' . $q . '%')->orWhere('description', 'LIKE', '%' . $q . '%')->orWhere('categorie', 'LIKE', '%' . $q . '%' )->get();
+        if (count($results) > 0)
+            return view('front.search', compact('article', 'popularArticle', 'lastArticle', 'category', 'fifthArticle', 'fifthCategory', 'results', 'q'));
+        else
+            return view('front.search', compact('article', 'popularArticle', 'lastArticle', 'category', 'fifthArticle', 'fifthCategory'));
+
     }
 }

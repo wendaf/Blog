@@ -7,7 +7,17 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
 </footer>
 
-
+<script type="text/javascript">
+  var el = document.createElement('script');
+      el.setAttribute('src', 'https://static.axept.io/sdk.js');
+      el.setAttribute('type', 'text/javascript');
+      el.setAttribute('async', true);
+      el.setAttribute('data-id', '5f11c44d21e2490428619521');
+      el.setAttribute('data-cookies-version', 'blog-base');
+  if (document.body !== null) {
+    document.body.appendChild(el);
+  }
+</script>
 <script type="text/javascript">
 
 
