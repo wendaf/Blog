@@ -3,6 +3,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>@yield('title_seo')</title>
+    <meta name="userId" content="{{ Auth::check() ? Auth::user()->id : '' }}">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
 
     <link href="/assets/img/favicon.png" rel=icon>
     <link href='https://fonts.googleapis.com/css?family=Roboto:100,300,400,700,500' rel='stylesheet' type='text/css'>
@@ -12,7 +15,6 @@
     <link href="/assets/css/owl.carousel.css" rel="stylesheet">
     <link href="/assets/css/owl.theme.default.min.css" rel="stylesheet">
     <link href="/assets/css/style.css" rel="stylesheet">
-
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->

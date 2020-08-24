@@ -5,6 +5,7 @@
     <script src="/assets/js/owl.carousel.min.js"></script>
     <script src="/assets/js/script.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+    <script src="{{ mix('js/app.js') }}" defer></script>
 </footer>
 
 <script type="text/javascript">

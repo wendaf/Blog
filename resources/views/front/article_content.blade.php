@@ -27,7 +27,8 @@
                                     <a class="a2a_button_email"></a>
                                     </div>
                                     <script async src="https://static.addtoany.com/menu/page.js"></script>
-                                    <!-- AddToAny END -->                                </div>
+                                    <!-- AddToAny END -->                                
+                                </div>
                             </div>
                     </div>
                 </div>

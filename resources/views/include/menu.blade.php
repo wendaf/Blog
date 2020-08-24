@@ -65,6 +65,8 @@
 
                     @endforeach
 
+                    <li class="active" style='list-style-type: none; margin-right: 25px; margin-top: 5px'><a href="/chats">Chatbox</a></li>
+
                     <form action="/search" method="POST" role="search" class="form-inline my-2 my-lg-0">
                     {{ csrf_field() }}
                         <input class="form-control mr-sm-2" type="search" name="q" style='margin-top: 2px; margin-left: 25px' placeholder="Quelques mots clés..." aria-label="Recherhcer">
