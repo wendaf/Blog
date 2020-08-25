@@ -16,15 +16,15 @@
                 </div>
                 <div class="col-md-4">
                     <div class="logo" style="color:rgba(84,84,84,0.53);font-family: 'Concert One', cursive;font-size:75px;margin-top:1%;">
-                        <img style="width: 370px; height: 100px" src="https://upload.wikimedia.org/wikipedia/commons/c/ce/Automoto_La_cha%C3%AEne_2018_on_air.jpg" />
+                        <a href="/"><img style="width: 370px; height: 100px" src="https://upload.wikimedia.org/wikipedia/commons/c/ce/Automoto_La_cha%C3%AEne_2018_on_air.jpg" /></a>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="right_section">
                         @if (Auth::guest())
                         <ul class="nav navbar-nav">
-                            <li><a href="/login">Login</a></li>
-                            <li><a href="/register">Register</a></li>
+                            <li><a href="/login"><i class="fas fa-sign-in-alt"></i> Connexion</a></li>
+                            <li><a href="/register"><i class="fas fa-user-plus"></i> Inscription</a></li>
                         </ul>
                         @else
                         <ul class="nav navbar-nav">
@@ -38,7 +38,7 @@
                                     @endif
                                     <li>
                                         <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('frm-logout').submit();">
-                                            Logout
+                                            <i class="fas fa-sign-out-alt"></i> Déconnexion 
                                         </a>
                                     </li>
                                 </ul>
