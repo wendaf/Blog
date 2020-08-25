@@ -23,4 +23,7 @@
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+    <script src="https://kit.fontawesome.com/eb80944819.js" crossorigin="anonymous"></script>
+
+
 </head>

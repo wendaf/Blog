@@ -56,21 +56,28 @@
             <nav class="navbar m-menu navbar-default">
                 <div style='display: flex; flex-direction: row; align-items: center; justify-content: center;'>
 
-                    <li class="active" style='list-style-type: none; margin-right: 25px; margin-top: 5px'><a href="/">Accueil</a></li>
+                    <a href="/" class="btn btn-primary btn-sm" style="margin-right: 5px" role="button" aria-disabled="true"><i class="fas fa-home"></i> Accueil</a>
 
-                    @php $count = 0; @endphp
-                    @foreach($fifthCategory as $key => $data)
+                    <div class="dropdown">
+                        <button class="btn btn-primary btn-sm dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fas fa-list"></i> Catégories
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
 
-                    <li class="active" style="list-style-type: none;  margin-right: 25px; margin-top: 5px"><a href="/categorie/{{$data->id}}">{{$data->name}}</a></li>
+                            @php $count = 0; @endphp
+                            @foreach($fifthCategory as $key => $data)
+                            <li class="dropdown-item active" type="button"><a href="/categorie/{{$data->id}}">{{$data->name}}</a></li>
+                            @endforeach
+                        </div>
+                    </div>
 
-                    @endforeach
 
-                    <li class="active" style='list-style-type: none; margin-right: 25px; margin-top: 5px'><a href="/chats">Chatbox</a></li>
+                    <a href="/chats" class="btn btn-primary btn-sm" style="margin-left: 5px; margin-right: 50px" role="button" aria-disabled="true"><i class="fas fa-comment"></i> Chatbox</a>
 
                     <form action="/search" method="POST" role="search" class="form-inline my-2 my-lg-0">
-                    {{ csrf_field() }}
+                        {{ csrf_field() }}
                         <input class="form-control mr-sm-2" type="search" name="q" style='margin-top: 2px; margin-left: 25px' placeholder="Quelques mots clés..." aria-label="Recherhcer">
-                        <button class="btn btn-outline-success my-2 my-sm-0" style='margin-top: 2px;' type="submit">Recherche</button>
+                        <button class="btn btn-primary btn-sm" style='margin-top: 2px;' type="submit"><i class="fas fa-search"></i> Recherche</button>
                     </form>
                     </ul>
                 </div>
