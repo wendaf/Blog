@@ -11,8 +11,7 @@
 
 <div class="container">
     @if(isset($results))
-        <p> Les résultats pour votre recherche <b> {{ $q }} </b> sont :</p>
-    <h2>Listes des news trouvee</h2>
+        <h2 style='margin-top: 25px; margin-bottom: 15px'> Les résultats pour votre recherche <b> "{{ $q }}" </b> sont :</h2>
     @foreach($results as $result)
     <div class="category_article_wrapper">
             <div class="row">
@@ -24,10 +23,6 @@
                             <h3 class="media-heading">
                                 <a href="/article/{{$result['id']}}" target="_self">{{$result['title']}}</a>
                             </h3> <span class="media-date"><a href="javascript:void(0);">{{$result['created_at']}}</a> By <a href="javascript:void(0);">{{$result['author']}}</a></span>
-
-                            <div class="widget_article_social">
-                                <span><a href="javascript:void(0);" target="_self"> <i class="fa fa-heart" data-id="{{$result['id']}}" style="background:transparent;color:red;margin-right:5px;font-weight:900">&nbsp;{{$result['like'] ?? 0}}</i></a></span>
-                            </div>
                         </div>
                 </div>
             </div>
