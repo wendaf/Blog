@@ -22,9 +22,10 @@
                 <div class="widget">
                     <div class="widget_title">
                         <h2><a href="javascript:void(0);">Tous les articles pour "{{$allArticle[0]['categorie'] ?? "Undefined"}}"</a></h2>
+                        <hr>
                     </div>
                     @foreach ($allArticle as $key => $data)
-                    <h2 class="media-heading" style="font-size:18px; margin-top: 25px; margin-bottom: 15px">
+                    <h2 class="media-heading" style="font-size:18px; margin-top: 10px; margin-bottom: 15px">
                         <a href="/article/{{$data['id']}}" target="_self">{{$data['title']}}</a> <span style="margin-right: 5px">/</span><a href="/article/{{$data['id']}}" class="btn-link" style="font-size: 15px;cursor:pointer;">En savoir plus<a>
                                 </h1>
                                 <div class="media">

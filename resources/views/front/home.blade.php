@@ -15,6 +15,7 @@
                 <div class="category_section mobile">
                     <div class="article_title header_purple">
                         <h2 style="font-size:20px;"><a href="/" target="_self">Derniers articles</a></h2>
+                        <hr>
                     </div>
                     <div class="category_article_wrapper">
                         <div class="row">
@@ -34,6 +35,7 @@
                 <div class="widget">
                     <div class="widget_title widget_black">
                         <h2><a href="javascript:void(0);">Articles populaires</a></h2>
+                        <hr>
                     </div>
                     @php
                     function make_seed()
