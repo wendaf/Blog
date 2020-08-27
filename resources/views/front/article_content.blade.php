@@ -17,19 +17,32 @@
                             <br>
                             <p>{{$myArticle['description']}}</p>
 
-
-
-                            <!-- Comment -->
-                            <div class="form-group" style="margin-top: 45px">
-                                <label for="exampleFormControlTextarea1">Poster un commentaire</label>
-                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                            <div class="card">
+                                @foreach ($myArticle->comments()->latest()->get() as $comment)
+                                    <div>
+                                        <strong>{{ $comment->user->name }}</strong>
+                                        {{ $comment->created_at->diffForHumans() }}
+                                    </div>
+                                    <div class="card-body">
+                                        {{ $comment->body }}
+                                    </div>
+                                @endforeach
                             </div>
-                            <button type="submit" class="btn btn-primary mb-2"><i class="fas fa-paper-plane"></i> Envoyer votre commentaires</button>
+                            @auth
+                            <!-- Comment -->
+                            <form action="{{ url("/article/{$myArticle['id']}/comments") }}" method="POST">
+                                @csrf
+                                <div class="form-group" style="margin-top: 45px">
+                                    <label for="body">Poster un commentaire</label>
+                                    <textarea class="form-control" id="body" name="body" rows="3"></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary mb-2"><i class="fas fa-paper-plane"></i> Envoyer votre commentaires</button>
+                            </form>
+                            @else
+                            <h1>Vous devez etre connecter pour pouvoir commenter cette article</h1>
+                            @endauth
 
                             <!-- AddToAny BEGIN -->
-
-
-
                             <div class="widget_article_social">
                                 <span><a href="javascript:void(0);" target="_self"> <i class="fa fa-heart" data-id="{{$myArticle['id']}}" style="background:transparent;color:red;margin-right:5px;font-weight:900">&nbsp;{{$myArticle['like'] ?? 0}}</i></a></span>
                             </div>

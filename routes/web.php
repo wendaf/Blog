@@ -28,6 +28,8 @@ Route::get('/chats', 'ChatController@index');
 Route::get('/messages', 'ChatController@fetchAllMessages');
 Route::post('/messages', 'ChatController@sendMessage');
 
+Route::post('/article/{id}/comments', 'CommentsController@store');
+
 // Admin routes
 Route::get('/home/admin', 'AdminController@index')->name('home_article');
 Route::get('/home/admin/user/', 'AdminController@index_user')->name('home_user');

@@ -105,5 +105,10 @@ class Article extends Model
         $this->category = $category;
     }
 
+    
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
 
 }
