@@ -30,6 +30,9 @@ Route::post('/messages', 'ChatController@sendMessage');
 
 Route::post('/article/{id}/comments', 'CommentsController@store');
 
+Route::get('/contact', 'ContactController@index');
+Route::post('/contact', 'ContactController@send')->name('send_email');
+
 // Admin routes
 Route::get('/home/admin', 'AdminController@index')->name('home_article');
 Route::get('/home/admin/user/', 'AdminController@index_user')->name('home_user');

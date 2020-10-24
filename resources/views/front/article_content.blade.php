@@ -8,8 +8,17 @@
             <div class="col-md-12">
                 <div class="widget">
                     <div class="media">
-                        <div class="media-left article-content" style="background-image:url('/{{$myArticle['media']}}')"> {{--<a href="javascript:void(0);">--}}</div>
-                        <div class="media-body">
+              
+                        @if ( empty(preg_match('/(http|ftp|mailto)/', $myArticle['media'], $matches) ) )
+                            <div class="media-left article-content" style="background-image:url('/{{$myArticle['media']}}')"> {{--<a href="javascript:void(0);">--}}</div>
+                        @else
+                        <div class="text-center">
+                            <iframe width="560" height="315" src="{{$myArticle['media']}}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                        @endif
+
+                            <div class="media-body">
+
                             <br>
                             <h1 class="media-heading">
                                 <a href="javascript:void(0);" target="_self">{{$myArticle['title']}}</a>

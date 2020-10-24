@@ -72,7 +72,10 @@
                     </div>
 
 
+                    
                     <a href="/chats" class="btn btn-primary btn-sm" style="margin-left: 5px; margin-right: 50px" role="button" aria-disabled="true"><i class="fas fa-comment"></i> Chatbox</a>
+
+                    <a href="/contact" class="btn btn-primary btn-sm" style="" role="button" aria-disabled="true"><i class="fas fa-envelope"></i> Contact</a>
 
                     <form action="/search" method="POST" role="search" class="form-inline my-2 my-lg-0">
                         {{ csrf_field() }}

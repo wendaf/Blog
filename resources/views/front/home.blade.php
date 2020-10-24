@@ -19,9 +19,15 @@
                     <div class="category_article_wrapper">
                         <div class="row">
                             <div class="col-md-6">
+                            @if ( empty(preg_match('/(http|ftp|mailto)/', $fifthArticle[0]['media'], $matches) ) )
                                 <div class="top_article_img">
                                     <a href="/article/{{$fifthArticle[0]['id']}}" target="_self"><img class="img-responsive" src="{{$fifthArticle[0]['media']}}" style="width:100%;height:155px !important;" alt="{{$fifthArticle[0]['title']}}"></a>
                                 </div>
+                            @else
+                                <div class="top_article_img">
+                                    <a href="/article/{{$fifthArticle[0]['id']}}" target="_self"><img class="img-responsive" src="http://i3.ytimg.com/vi/NchzObiAi4Y/maxresdefault.jpg" style="width:100%;height:155px !important;" alt="{{$fifthArticle[0]['title']}}"></a>
+                                </div>
+                            @endif
                             </div>
                         </div>
                         <div style="margin-top:2.5%;"></div>
@@ -49,8 +55,13 @@
                     $rand = mt_rand() % (count($color));
                     @endphp
                     <div class="media">
+                        @if ( empty(preg_match('/(http|ftp|mailto)/', $data['media'], $matches) ) )
                         <div class="media-left">
                             <a href="javascript:void(0);"><img class="media-object" src="{{str_replace('_cover', '_thumb', str_replace('cover_article', 'cover_thumb', $data['media']))}}" alt="{{$data['title']}}"></a>
+                            @else
+                            {{ preg_match('%(?:youtube(?:-nocookie)?\.com/(?:[^/]+/.+/|(?:v|e(?:mbed)?)/|.*[?&]v=)|youtu\.be/)([^"&?/ ]{11})%i', $data['media'], $match) }}
+                            <a href="javascript:void(0);"><img class="media-object" src="{{str_replace('_cover', '_thumb', str_replace('cover_article', 'cover_thumb', "http://i3.ytimg.com/vi/$match[1]/maxresdefault.jpg"))}}" width="120" height="120"  alt="{{$data['title']}}"></a>
+                            @endif
                         </div>
                         <div class="media-body">
                             <span class="tag {{$color[$rand]}}">{{$data['categorie']}}</span>
