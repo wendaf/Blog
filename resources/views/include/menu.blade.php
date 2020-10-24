@@ -34,8 +34,13 @@
                                     <span><i class="fa fa-angle-down"></i></span></a>
                                 <ul class="dropdown-menu">
                                     @if (Auth::user()->is_admin)
-                                    <li><a href="/home/admin">Panel admin</a></li>
+                                    <li><a href="/home/admin"><i class="fas fa-user-shield"></i> Panel admin</a></li>
                                     @endif
+                                    <li>
+                                        <a href="/profil/edit">
+                                            <i class="fas fa-user-edit"></i> Mon profil 
+                                        </a>
+                                    </li>
                                     <li>
                                         <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('frm-logout').submit();">
                                             <i class="fas fa-sign-out-alt"></i> Déconnexion 
