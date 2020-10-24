@@ -2,7 +2,8 @@
 
 @section('content')
 
-<form action="" method="post" action="{{ route("send_email") }}" style="width:40%">
+<form action="" method="post" action="{{ route("send_email") }}" style="width: 50%;
+margin-left : 25%">
 
     <!-- CROSS Site Request Forgery Protection -->
     @csrf
@@ -32,7 +33,7 @@
         <textarea class="form-control" name="message" id="message" rows="4"></textarea>
     </div>
 
-    <input type="submit" name="send" value="Submit" class="btn btn-dark btn-block">
+    <input type="submit" class="btn btn-primary" name="send" value="Submit" class="btn btn-dark btn-block">
 </form>
 
 @endsection

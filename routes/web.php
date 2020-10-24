@@ -29,6 +29,7 @@ Route::get('/messages', 'ChatController@fetchAllMessages');
 Route::post('/messages', 'ChatController@sendMessage');
 
 Route::get('/profil/edit', 'EditProfilController@index');
+Route::post('/profil/edit', 'EditProfilController@update')->name('update_profile');
 
 Route::post('/article/{id}/comments', 'CommentsController@store');
 
